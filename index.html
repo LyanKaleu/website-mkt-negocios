@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Extensão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="principal">
+        <div class="conteudo-principal">
+            <div id="texto-principal">
+                <h1>Curso de Gestão de Marketing & Vendas</h1>
+                <p>Uma oportunidade para seu crescimento acadêmico e profissional!</p>
+                <p>
+                    <img src="assets/calendar.png" alt="ícone de calendário" class="icone-principal">
+                    <span id="destaque-data">26 DE OUTUBRO, 9, 23 E 30 DE NOVEMBRO</span></p>
+                <p>
+                    <img src="assets/relogio-com-sentido-horario.png" alt="ícone de horário" class="icone-principal">
+                    <span id="destaque-data">A confirmar</span>
+                </p>
+                <p>
+                    <img src="assets/pin.png" alt="ícone de localização" class="icone-principal">
+                    <span id="destaque-data">A confirmar</span></p>
+            </div>
+
+            <div id="logo-curso">
+                <img src="assets/" alt="logo-curso">
+            </div>
+        </div>
+
+        <div id="oferecimento">
+            <p>Realização:</p>
+            <img src="assets/logo-exito.png" alt="logo-exito">
+        </div>
+    </section>
+
+    <section id="info-curso">
+        <div class="curso-info">
+            <h2>Nosso curso conta com:</h2>
+
+            <div class="info-container">
+                <div class="info-box">
+                    <img src="assets/info-1.png" alt="">
+                    <p>✔ Ministrantes com experiência teórica e prática</p>
+                </div>
+
+                <div class="info-box">
+                    <img src="assets/info-2.png" alt="">
+                    <p>✔ Modalidades (60h/aula): <br>a) Semipresencial <br>b) 100% online</p>
+                </div>
+
+                <div class="info-box">
+                    <img src="assets/info-3.png" alt="">
+                    <p>✔ Materiais atualizados e certificado garantido</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="curso-ementa">
+            <h2>Ementa</h2>
+            <div class="info-box ementa">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="ministrantes">
+            <h2>Nossos Ministrantes</h2>
+            <div class="ministrantes-container">
+                <div class="ministrante">
+                    <img src="assets/" alt="">
+                    <div class="ministrante-info">
+                        <p>Profa. Me. Joselma Maria</p>
+                        <p>(Mestra em Saúde / Gestora Pública / Empresária)</p>
+                    </div>
+                </div>
+
+                <div class="ministrante">
+                    <img src="assets/" alt="">
+                    <div class="ministrante-info">
+                        <p>Prof. Dr. Geraldo Pereira</p>
+                        <p>(Doutor em Propriedade Intelectual / Administrador)</p>
+                    </div>
+                </div>
+
+                <div class="ministrante">
+                    <img src="assets/" alt="">
+                    <div class="ministrante-info">
+                        <p>Prof. Dr. George Ventura</p>
+                        <p>(Doutor em Administração / Especialista em Startup)</p>
+                    </div>
+                </div>
+
+                <div class="ministrante">
+                    <img src="assets/" alt="">
+                    <div class="ministrante-info">
+                        <p>Prof. Dr. José R. A. Filho</p>
+                        <p>(Doutor em Educação / Administrador / Empreendedor)</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="ingressos">
+        <h2>Nosso curso conta com lotes promocionais e vagas limitadas!</h2>
+        <p>Garanta já a sua!</p>
+        <div class="ingressos-container">
+            <div class="ingressos-box estudante">
+                <h3>ESTUDANTES</h3>
+                <p></p>
+            </div>
+
+            <div class="ingressos-box demais">
+                <h3>DEMAIS</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="lotes">
+            <h2>Lotes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>1º Lote (Até 30/09)</th>
+                        <th>2º Lote (De 01/10 a 15/10)</th>
+                        <th>3º Lote (De 16/10 a 25/10)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Aluno(a)s</td>
+                        <td>R&dollar; 200,00 (em 12x no cartão)</td>
+                        <td>R&dollar; 250,00 (em 12x no cartão)</td>
+                        <td>R&dollar; 300,00 (em 12x no cartão)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Demais</td>
+                        <td>R&dollar; 350,00 (em 12x no cartão)</td>
+                        <td>R&dollar; 400,00 (em 12x no cartão)</td>
+                        <td>R&dollar; 450,00 (em 12x no cartão)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            function atualizarValoresIngressos() {
+                const dataAtual = new Date();
+                
+                const lote1Fim = new Date('2024-09-30');
+                const lote2Inicio = new Date('2024-10-01');
+                const lote2Fim = new Date('2024-10-15');
+                const lote3Inicio = new Date('2024-10-16');
+
+                
+                const estudanteBox = document.querySelector('.ingressos-box.estudante p');
+                const demaisBox = document.querySelector('.ingressos-box.demais p');
+
+                
+                if (dataAtual <= lote1Fim) {
+                    estudanteBox.textContent = 'R$ 200,00';
+                    demaisBox.textContent = 'R$ 350,00';
+                } else if (dataAtual >= lote2Inicio && dataAtual <= lote2Fim) {
+                    estudanteBox.textContent = 'R$ 250,00';
+                    demaisBox.textContent = 'R$ 400,00';
+                } else if (dataAtual >= lote3Inicio) {
+                    estudanteBox.textContent = 'R$ 300,00';
+                    demaisBox.textContent = 'R$ 450,00';
+                }
+            }
+
+            window.onload = atualizarValoresIngressos;
+        </script>
+
+        <div class="tempo">
+            <h3>FALTAM:</h3>
+            <div id="rd-counter-lzsxjnwr">
+                <div class="counter-days" class="counter-item">
+                    <span class="value">00</span>
+                    <span class="label">Dias</span>
+                </div>
+    
+                <div class="counter-hours" class="counter-item">
+                    <span class="value">00</span>
+                    <span class="label">Horas</span>
+                </div>
+    
+                <div class="counter-minutes" class="counter-item">
+                    <span class="value">00</span>
+                    <span class="label">Minutos</span>
+                </div>
+    
+                <div class="counter-seconds" class="counter-item">
+                    <span class="value">00</span>
+                    <span class="label">Segundos</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="form.html" class="inscricao-btn">INSCREVA-SE AGORA</a>
+    </section>
+
+
+    <section id="localizacao">
+        <h2>LOCALIZAÇÃO</h2>
+        <iframe src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section id="contatos">
+        <h2>Entre em contato conosco:</h2>
+        <p><span>TELEFONES:</span> <img src="assets/whatsapp-logo.png" alt="logo-whatsapp"> (86) 98815-1846 - Isadora Albuquerque<br>(86) 98852-5037 - Lyan Kaleu<br>(86) 99925-5555 - José Filho</p>
+
+        <p><span>SOCIAL:</span> <a href="https://www.instagram.com/drjosefilho" target="_blank"><img src="assets/instagram-logo.png" alt="logo-instagram">&#64;drjosefilho</a></p>
+    </section>
+
+    <footer>
+        <p>2024 - Todos os direitos reservados.</p>
+    </footer>
+
+    <script> 
+        document.addEventListener("DOMContentLoaded",function(){
+            var SEC = 1000;
+            var MIN = 60 * SEC;
+            var HR = 60 * MIN;
+            var DAY = 24 * HR;
+            var interval;
+        
+            var dayElement = document.querySelector("#rd-counter-lzsxjnwr .counter-days .value");
+            var hourElement = document.querySelector("#rd-counter-lzsxjnwr .counter-hours .value");
+            var minuteElement = document.querySelector("#rd-counter-lzsxjnwr .counter-minutes .value");
+            var secondElement = document.querySelector("#rd-counter-lzsxjnwr .counter-seconds .value");
+
+            initCountdown()
+        
+            function initCountdown() {
+            var countdownDate = "Sat Oct 26 2024 08:00:00 GMT-0300 (Hora padrão de Brasília)"
+            
+            interval = setInterval(() => updateCounter(new Date(countdownDate)), 1000);
+            }
+        
+            function updateCounter(dateTarget) {
+            var countdown = calculateTimeDifference(dateTarget);
+        
+            dayElement.innerHTML = countdown.days;
+            hourElement.innerHTML = countdown.hours;
+            minuteElement.innerHTML = countdown.minutes;
+            secondElement.innerHTML = countdown.seconds;
+            };
+        
+            function calculateTimeDifference(dateTarget) {
+            var currentTime = new Date().getTime();
+            var difference = dateTarget.getTime() - currentTime;
+        
+            if (difference < 0) {
+                clearInterval(interval)
+                return { days: '00', hours: '00', minutes: '00', seconds: '00' };
+            }
+        
+            var days = `${Math.floor(difference / DAY)}`.padStart(2, '0');
+            var hours = `${Math.floor((difference % DAY) / HR)}`.padStart(2, '0');
+            var minutes = `${Math.floor((difference % HR) / MIN)}`.padStart(2, '0');
+            var seconds = `${Math.floor((difference % MIN) / SEC)}`.padStart(2, '0');
+        
+            return { days: days, hours: hours, minutes: minutes, seconds: seconds };
+            };
+        });
+    </script>
+</body>
+</html>

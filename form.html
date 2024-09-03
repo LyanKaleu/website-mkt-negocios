@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="form.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+</head>
+<body>
+    <main>
+        <div id="formulario">
+            <h1>INSCRIÇÃO: CURSOS DE EXTENSÃO</h1>
+            <p>Local: A confirmar</p>
+            <p>Data: 26/10/2024 - 09, 23 e 30/11/2024</p>
+
+            <form name="submit-to-google-sheet" id="inscricao-form" action="#" method="post" autocomplete="on">
+                <div class="campo">
+                    <span class="material-symbols-outlined">person</span>
+                    <input type="text" name="nome" id="nome" placeholder="Nome Completo" autocomplete="name" required maxlength="70">
+                    <label for="nome">Nome Completo</label>
+                </div>
+
+
+                <div class="campo">
+                    <span class="material-symbols-outlined">email</span>
+                    <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" required maxlength="30">
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="campo">
+                    <span class="material-symbols-outlined">phone</span>
+                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone: (xx) xxxxx-xxxx" autocomplete="tel" required maxlength="15">
+                </div>
+
+                <div class="campo">
+                    <span class="material-symbols-outlined">list</span>
+                    <select name="categoria" id="categoria" required>
+                        <option value="" disabled selected>Selecione a categoria</option>
+                        <option value="estudante">Estudante</option>
+                        <option value="demais">Demais</option>
+                    </select>
+                    <label for="categoria">Categoria</label>
+                </div>
+
+                <div class="campo">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <select name="modalidade" id="modalidade" required>
+                        <option value="" disabled selected>Selecione a modalidade</option>
+                        <option value="presencial">Semipresencial</option>
+                        <option value="online">Online</option>
+                    </select>
+                    <label for="modadlidade">Modalidade</label>
+                </div>
+
+                <input id="submitBtn" type="submit" value="Enviar">
+            </form>
+        </div>
+    </main>
+
+    <button id="back-button" title="Voltar" onclick="window.history.back()">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const telefoneInput = document.getElementById('telefone');
+
+            telefoneInput.addEventListener('input', function (e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                let formato = '';
+
+                if (valor.length > 6) {
+                    formato = `(${valor.substring(0, 2)}) ${valor.substring(2, 7)}-${valor.substring(7, 11)}`;
+                } else if (valor.length > 2) {
+                    formato = `(${valor.substring(0, 2)}) ${valor.substring(2, 7)}`;
+                } else {
+                    formato = `(${valor.substring(0, 2)}`;
+                }
+
+                e.target.value = formato;
+            });
+
+            telefoneInput.addEventListener('blur', function (e) {
+                let valor = e.target.value.replace(/\D/g, '');
+                let formato = '';
+
+                if (valor.length >= 10) {
+                    formato = `(${valor.substring(0, 2)}) ${valor.substring(2, 7)}-${valor.substring(7, 11)}`;
+                } else if (valor.length >= 6) {
+                    formato = `(${valor.substring(0, 2)}) ${valor.substring(2, 7)}`;
+                } else {
+                    formato = `(${valor.substring(0, 2)}`;
+                }
+
+                e.target.value = formato;
+            });
+
+            const form = document.getElementById('inscricao-form');
+            form.addEventListener('submit', function (e) {
+                const telefone = document.getElementById('telefone').value;
+                const telefoneValido = /^\(\d{2}\) \d{5}-\d{4}$/.test(telefone);
+
+                if (!telefoneValido) {
+                    e.preventDefault();
+                    alert('Por favor, insira um número de telefone válido no formato (xx) xxxxx-xxxx.');
+                } else {
+                    const categoria = document.getElementById('categoria').value;
+                    let url = '';
+                    const hoje = new Date();
+
+                    if (categoria === 'estudante') {
+                        if (hoje <= new Date('2024-09-30')) {
+                            url = ''; // 1 lote estudante
+                        } else if (hoje <= new Date('2024-10-01')) {
+                            url = ''; // 2 lote estudante
+                        } else {
+                            url = ''; // 3 lote estudante
+                        }
+                    } else {
+                        if (hoje <= new Date('2024-09-30')) {
+                            url = ''; // 1 lote demais
+                        } else if (hoje <= new Date('2024-10-01')) {
+                            url = ''; // 2 lote demais
+                        } else {
+                            url = ''; // 3 lote demais
+                        }
+                    }
+
+                    exibirMensagemESucesso(url);
+                }
+            });
+        });
+
+        function exibirMensagemESucesso(link) {
+            const mainContent = document.querySelector('main');
+            mainContent.innerHTML = `
+            <div id="sucesso">
+                <h1>Inscrição realizada com sucesso!</h1>
+                <p>Redirecionando para o pagamento...</p>
+            </div>`;
+
+            setTimeout(function () {
+                window.location.href = link;
+            }, 5000);
+        }
+
+        const scriptURL = '';
+        const form = document.forms['submit-to-google-sheet']; // formulario no index
+
+        form.addEventListener('submit', e =>
+        {
+            e.preventDefault();
+
+            var formData = new FormData(form);
+            var data = {};
+
+            for (var [key, value] of formData.entries())
+            {
+                data[key] = value;
+            }
+            data_result = JSON.stringify(data);
+
+            fetch(scriptURL, { method: 'POST', body: data_result})
+            .then(response =>
+            {
+                //alert("Feito! formulario adicionado a planilha.");
+            })
+            .catch(error =>
+            {
+                //alert("Ops. Não conseguimos receber o formulário, tente novamente ou verifique o problema");
+                console.error(error);
+            })
+        });
+    </script>
+</body>
+</html>
