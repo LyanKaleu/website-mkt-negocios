@@ -428,12 +428,12 @@ p {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .card {
     width: 300px;
-    margin: 50px;
+    margin: 50px 40px;
     display: flex;
     text-align: center;
     border-radius: 20px;
@@ -447,6 +447,16 @@ p {
     justify-content: center;
     background: linear-gradient(to top right, #fff, #D0E2FD) ;
       
+}
+
+.card-style-02 {
+    width: 250px;
+}
+
+.card-style-02 img {
+    object-fit: cover;
+    object-position: top;
+    background-size: cover;
 }
 
 .card img {
@@ -474,13 +484,12 @@ p {
 
 .card h3 {
     color: #252B42;
-    /* font-size: 1.6em; */
     padding: 10px;
 }
 
 .card p {
-    /* font-size: 14px; */
     color: #737373;
+    margin-top: 10px;
 }
 
 .card-info {
@@ -500,14 +509,18 @@ p {
 }
 
 .studant p, .entire p {
+    flex: 1;
     padding: 20px;
+    display: flex;
     color: #252B42;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilo para sessão ementa */
 /* --------------------------------------- */
 .info-box {
-    flex: 1;
+    width: 80%;
     display: flex;
     padding: 20px;
     margin: 2em auto;
@@ -518,22 +531,125 @@ p {
 }
 
 .info-box ul {
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    display: grid;
     text-align: left;
     list-style-type: disc;
+    grid-template-columns: repeat(3, 2fr);
 }
 
 .info-box ul li {
+    margin: 5px 0;
     font-size: 1.1em;
-    margin-bottom: 10px;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.info-box p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-indent: 20px;
+    text-align: justify;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tablink {
+    width: 15%;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 14px 16px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.tablink:hover {
+    background-color: #021026;
+}
+
+.tablink.active {
+    color: #fff;
+    background-color: #001F3F;
+}
+
+.tabcontent {
+    display: none;
+    text-align: left;
+    border-top: none;
+    animation: fadeEffect 1s; /* Animação de transição suave */
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.paragraph {
+    padding: 20px 0;
 }
 
 /* Celulares (até 600px) */
 @media (max-width: 600px) {
+    .info-box ul {
+        margin: 10px;
+        display: grid;
+        text-align: left;
+        list-style-type: disc;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .tab {
+        display: flex;
+        overflow-x: auto;
+        flex-direction: row;
+        scroll-snap-type: x mandatory; /* Adiciona o scroll snap */
+        -webkit-overflow-scrolling: touch; /* Suaviza o scroll em dispositivos iOS */
+    }
+
+    .tab::-webkit-scrollbar {
+        display: none;
+      }
+
+    .tablink {
+        width: 60%;
+        flex: 0 0 auto;
+        text-align: center;
+        margin-bottom: 10px;
+        scroll-snap-align: start; /* Cada tablink "trava" no início */
+    }
+
+    .tablink:last-child{
+        margin-right: 150px;
+    }
+
+    .tabcontent {
+        width: 100%;
+        padding: 30px;
+    }
+
     .card-container {
         align-items: center;
+    }
+
+    .card-style-02 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-style-02 p {
+        margin-top: 10px;
+    }
+
+    .card-style-02 img {
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 5px 5px #00000090;
+    }
+
+    .card-info {
+        align-self: center;
     }
 
     .card {
@@ -550,15 +666,20 @@ p {
     }
 }
 
+
 /* Celulares (600px até 768px) */
 @media (min-width: 600px) and (max-width: 768px) {
+    .tablink {
+        width: 30%;
+    }
+
     .card-container {
         justify-content: space-around;
     }
 
     .card {
         width: 80%;
-        margin: 20px;
+        margin: 20px 0;
     }
 
     .card img {
@@ -567,6 +688,25 @@ p {
 
     .card-style-01 {
         padding: 30px;
+    }
+
+    .card-style-02 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-style-02 p {
+        margin-top: 16px;
+    }
+
+    .card-style-02 img {
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 5px 5px #00000090;
+    }
+
+    .card-info {
+        align-self: center;
     }
 
     .card h3 {
@@ -580,12 +720,17 @@ p {
 
 /* Tablets (768px até 992px) */
 @media (min-width: 768px) and (max-width: 992px) {
+    .tablink {
+        width: 20%;
+    }
+
     .card-container {
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .card {
-        width: 45%;
+        width: 80%;
         margin: 30px;
     }
 
@@ -595,6 +740,25 @@ p {
 
     .card-style-01 {
         padding: 35px;
+    }
+
+    .card-style-02 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-style-02 p {
+        margin-top: 16px;
+    }
+
+    .card-style-02 img {
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 5px 5px #00000090;
+    }
+
+    .card-info {
+        align-self: center;
     }
 
     .card h3 {
@@ -608,13 +772,17 @@ p {
 
 /* Desktops (992px até 1200px) */
 @media (min-width: 992px) and (max-width: 1200px) {
+    .tablink {
+        width: 15%;
+    }
+
     .card-container {
         justify-content: space-around;
     }
 
     .card {
-        width: 30%;
-        margin: 40px;
+        width: 35%;
+        margin: 35px;
     }
 
     .card img {
@@ -623,6 +791,27 @@ p {
 
     .card-style-01 {
         padding: 40px;
+    }
+
+    .card-style-02 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-style-02 p {
+        margin-top: 16px;
+    }
+
+    .card-style-02 img {
+        height: 300px;
+    }
+
+    .card-info {
+        height: 150px;
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .card h3 {
@@ -654,7 +843,6 @@ p {
 #inscription p {
     font-size: 1.5em;
     font-style: bold;
-    margin-bottom: 30px;
 }
 
 /* Estilo para tabela */
@@ -708,7 +896,7 @@ tbody tr:hover {
 
 .batch-time {
     width: 100%;
-    padding: 50px;
+    padding: 80px;
 }
 
 #rd-counter-lzsxjnwr {
@@ -749,6 +937,12 @@ tbody tr:hover {
 
     #inscription p {
         font-size: 1.2em;
+    }
+
+    .studant, .entire {
+        flex: 1;
+        height: 150px;
+        margin: 0 10px;
     }
 
     table, th, td {

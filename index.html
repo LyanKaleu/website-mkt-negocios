@@ -61,10 +61,17 @@
                 <p>Semipresencial ou 100% online</p>
             </div>
         </section>
+        
+        <section>
+            <div class="tab">
+                <a class="tablink" onclick="openTab(event, 'Ementa')" id="defaultOpen"><h5>EMENTA</h5></a>
+                <a class="tablink" onclick="openTab(event, 'ObjetivoGeral')"><h5>OBJETIVO GERAL</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Metodologia')"><h5>METODOLOGIA</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Recursos')"><h5>RECURSOS DIDÁTICOS</h5></a>
+            </div>
 
-        <section class="curso-ementa">
-            <h2>Ementa</h2>
-            <div class="info-box">
+            <div id="Ementa" class="tabcontent info-box">
+                <h3>Ementa</h3>
                 <ul>
                     <li>Mix de Marketing (os 5P's);</li>
                     <li>Pesquisa e Segmentação de Mercado;</li>
@@ -77,33 +84,60 @@
                     <li>Estilos de Negociação</li>
                 </ul>
             </div>
+
+            <div id="ObjetivoGeral" class="tabcontent info-box">
+                <h3>Objetivo Geral</h3>
+                <p>Apresentar e discutir os fundamentos da Gestão de Marketing, assim como o Planejamento e a elaboração de estratégias de vendas para empresas de diferentes áreas de atuação.</p>
+            </div>
+
+            <div id="Metodologia" class="tabcontent info-box">
+                <h3>Metodologia</h3>
+                <p>Este curso está estruturado no formato híbrido, sendo 30 h/a presenciais e 30 h/a no on-line. A primeira parte se desenvolve através de aulas expositivas dialogadas, com ampla participação do(a)s aluno(a)s por meio de: exposição teórica; discussão de cases; estudo de textos e artigos científicos; resolução de exercícios; reflexões sobre o perfil de empresas no Instagram, Youtube e Site; análise de vídeos. Será proposto uma visita técnica a duas empresas para aplicação de instrumento de pesquisa, através de entrevista e questionário, com posterior tabulação e discussão dos resultados. `
+                </p>
+                <p>
+                A segunda parte consiste de videoaulas gravadas, bem como 02 aulas sincrônicas, preferencialmente em 02 sábados após a conclusão da primeira parte, de 17h às 18h.
+                </p>
+            </div>
+            <div id="Recursos" class="tabcontent info-box">
+                <div class="paragraph">
+                    <h3>Recursos Didáticos</h3>
+                    <p>Quadro branco, pincéis, projetor multimídia, textos e artigos científicos (periódicos, sites, portais, livros), vídeos (app “Youtube”) e filmes (Netflix e/ou Amazon Prime Video), videoaulas gravadas pelo professor;</p>
+                </div>
+                <div class="paragraph">
+                    <h3>Avaliação da Aprendizagem</h3>
+                    <p>A avaliação terá o caráter qualitativo e quantitativo, através da realização de exercícios com questões objetivas e subjetivas, trabalhos em equipe (com apresentação de seminário on-line) e pontualidade na devolução das atividades avaliativas (fundamental para um bom desenvolvimento do processo ensino-aprendizagem da disciplina).
+                    As avaliações de segunda chamada poderão ser no estilo “oral” e individual.</p>
+                </div>
+            </div>
         </section>
+        <!-- script para navegação de links - informações -->
+        <script src="js/scripts.js"></script>
 
         <section class="container-info">
             <h2>Nossos Ministrantes</h2>
             <div class="card-container">
-                <div class="card">
+                <div class="card card-style-02">
                     <img src="assets/joselma-maria.jpg" alt="Imagem Mestra Joelma Maria">
                     <div class="card-info">
                         <h5>Prof. Me. Joselma Maria</h5>
                         <p>Mestra em Saúde, Gestora Pública e Empresária</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card card-style-02">
                     <img src="assets/geraldo-pereira.jpg" alt="Imagem Professor Gerardo Pereira">
                     <div class="card-info">
                         <h5>Prof. Dr. Gerardo Pereira</h5>
                         <p>Doutor em Propriedade Intelectual e Administrador</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card card-style-02">
                     <img src="assets/george-ventura.jpg" alt="Imagem Professor George Ventura">
                     <div class="card-info">
                         <h5>Prof. Dr. George Ventura</h5>
                         <p>Doutor em Administração, Especialista em Startup</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card card-style-02">
                     <img src="assets/jose-filho.jpg " alt="Imagem Professor Jose R. A. Filho">
                     <div class="card-info">
                         <h5>Prof. Dr. José R. A. Filho</h5>
@@ -116,7 +150,6 @@
 
     <section id="inscription">
         <h2>Nosso curso conta com lotes promocionais e vagas limitadas!</h2>
-        <p>Garanta já a sua!</p>
         <div class="card-container">
             <div class="card studant">
                 <h3>Estudantil</h3>
@@ -158,35 +191,8 @@
                 </tbody>
             </table>
         </div>
-
-        <script>
-            function atualizarValoresIngressos() {
-                const dataAtual = new Date();
-                
-                const lote1Fim = new Date('2024-09-30');
-                const lote2Inicio = new Date('2024-10-01');
-                const lote2Fim = new Date('2024-10-15');
-                const lote3Inicio = new Date('2024-10-16');
-
-                
-                const estudanteBox = document.querySelector('.card.studant p');
-                const demaisBox = document.querySelector('.card.entire p');
-
-                
-                if (dataAtual <= lote1Fim) {
-                    estudanteBox.textContent = 'R$ 200,00';
-                    demaisBox.textContent = 'R$ 350,00';
-                } else if (dataAtual >= lote2Inicio && dataAtual <= lote2Fim) {
-                    estudanteBox.textContent = 'R$ 250,00';
-                    demaisBox.textContent = 'R$ 400,00';
-                } else if (dataAtual >= lote3Inicio) {
-                    estudanteBox.textContent = 'R$ 300,00';
-                    demaisBox.textContent = 'R$ 450,00';
-                }
-            }
-
-            window.onload = atualizarValoresIngressos;
-        </script>
+        <!-- Script para atualizar valores -->
+        <script src="js/scripts.js"></script>
 
         <div class="batch-time">
             <div id="rd-counter-lzsxjnwr">
@@ -216,6 +222,8 @@
             </div>
         </div>
     </section>
+    <!-- Script para contagem regressiva  -->
+    <script src="js/scripts.js"></script>
 
     <footer id="footer-container">
         <div class="row">
@@ -238,54 +246,5 @@
             </div>
         </div>
     </footer>
-
-    <script> 
-        document.addEventListener("DOMContentLoaded",function(){
-            var SEC = 1000;
-            var MIN = 60 * SEC;
-            var HR = 60 * MIN;
-            var DAY = 24 * HR;
-            var interval;
-        
-            var dayElement = document.querySelector("#rd-counter-lzsxjnwr .counter-days .value");
-            var hourElement = document.querySelector("#rd-counter-lzsxjnwr .counter-hours .value");
-            var minuteElement = document.querySelector("#rd-counter-lzsxjnwr .counter-minutes .value");
-            var secondElement = document.querySelector("#rd-counter-lzsxjnwr .counter-seconds .value");
-
-            initCountdown()
-        
-            function initCountdown() {
-            var countdownDate = "Sat Oct 26 2024 08:00:00 GMT-0300 (Hora padrão de Brasília)"
-            
-            interval = setInterval(() => updateCounter(new Date(countdownDate)), 1000);
-            }
-        
-            function updateCounter(dateTarget) {
-            var countdown = calculateTimeDifference(dateTarget);
-        
-            dayElement.innerHTML = countdown.days;
-            hourElement.innerHTML = countdown.hours;
-            minuteElement.innerHTML = countdown.minutes;
-            secondElement.innerHTML = countdown.seconds;
-            };
-        
-            function calculateTimeDifference(dateTarget) {
-            var currentTime = new Date().getTime();
-            var difference = dateTarget.getTime() - currentTime;
-        
-            if (difference < 0) {
-                clearInterval(interval)
-                return { days: '00', hours: '00', minutes: '00', seconds: '00' };
-            }
-        
-            var days = `${Math.floor(difference / DAY)}`.padStart(2, '0');
-            var hours = `${Math.floor((difference % DAY) / HR)}`.padStart(2, '0');
-            var minutes = `${Math.floor((difference % HR) / MIN)}`.padStart(2, '0');
-            var seconds = `${Math.floor((difference % MIN) / SEC)}`.padStart(2, '0');
-        
-            return { days: days, hours: hours, minutes: minutes, seconds: seconds };
-            };
-        });
-    </script>
 </body>
 </html>
