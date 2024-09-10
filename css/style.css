@@ -65,6 +65,7 @@ p {
 }
 
 .course {
+    position: relative; /* Para que o pseudo-elemento seja posicionado corretamente */
     flex: 1;
     height: 100%;
     display: flex;
@@ -78,14 +79,37 @@ p {
     transition: transform 1s ease, filter 1s ease, box-shadow 1s ease;
 }
 
+.course::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: inherit; /* Usar a mesma imagem de fundo */
+    z-index: 1; /* Colocar o pseudo-elemento atrás do conteúdo, mas na frente do fundo */
+    filter: grayscale(100%) blur(3px); /* Aplicar o filtro preto e branco */
+    transition: filter 0.3s ease; /* Suavizar a transição */
+}
+
 .course-info {
+    position: relative; /* Para garantir que o conteúdo apareça acima do pseudo-elemento */
     width: 70%;
     color: #fff;
     padding: 20px;
     text-align: left;
     border-radius: 20px;
     background-color: #00000080;
+    z-index: 2; /* Colocar o conteúdo à frente do pseudo-elemento */
     transition: background-color 0.3s ease;
+}
+
+/* Efeitos de seleção */
+.course.selected::before {
+    filter: none; /* Remover o filtro preto e branco na seleção */
 }
 
 .course-info h2 {
@@ -133,9 +157,9 @@ p {
 
 /* Efeitos de seleção */
 .course.selected {
-    filter: saturate(1.2);
-    transform: scale(1.05);
-    filter: drop-shadow(0 0px 10px #000000cc);
+    filter: saturate(1.5);
+    transform: scale(1.02);
+    /* filter: drop-shadow(0 0px 10px #000000cc); */
 }
 
 .course.selected .course-info {
@@ -433,8 +457,8 @@ p {
 
 .card {
     width: 300px;
-    margin: 50px 40px;
     display: flex;
+    margin: 50px 40px;
     text-align: center;
     border-radius: 20px;
     flex-direction: column;
@@ -539,7 +563,7 @@ p {
 }
 
 .info-box ul li {
-    margin: 5px 0;
+    margin: 15px 20px;
     font-size: 1.1em;
 }
 
@@ -669,6 +693,14 @@ p {
 
 /* Celulares (600px até 768px) */
 @media (min-width: 600px) and (max-width: 768px) {
+    .info-box ul {
+        margin: 10px;
+        display: grid;
+        text-align: left;
+        list-style-type: disc;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
     .tablink {
         width: 30%;
     }
@@ -720,6 +752,18 @@ p {
 
 /* Tablets (768px até 992px) */
 @media (min-width: 768px) and (max-width: 992px) {
+    .info-box ul {
+        margin: 10px;
+        display: grid;
+        text-align: left;
+        list-style-type: disc;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-box ul li {
+        margin: 5px 15px;
+    }
+
     .tablink {
         width: 20%;
     }
@@ -772,6 +816,18 @@ p {
 
 /* Desktops (992px até 1200px) */
 @media (min-width: 992px) and (max-width: 1200px) {
+    .info-box ul {
+        margin: 10px;
+        display: grid;
+        text-align: left;
+        list-style-type: disc;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .info-box ul li {
+        margin: 10px 20px;
+    }
+
     .tablink {
         width: 15%;
     }
@@ -1050,10 +1106,11 @@ tbody tr:hover {
     animation: gradientMove 3s infinite ease; /* Animação em loop contínuo */
 }
 
-.logo-footer {
-    width: 200px;
-    height: auto;
-    background-size: cover;
+.col img {
+    width: 180px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .dropdown {
@@ -1067,6 +1124,7 @@ tbody tr:hover {
     display: none;
     min-width: 160px;
     border-radius: 1em;
+    overflow: hidden;
     position: absolute;
     background-color: #fafafa;
     box-shadow: 0 8px 16px 0px #0000000f;
@@ -1076,7 +1134,7 @@ tbody tr:hover {
     display: block;
     text-align: left;
     color: #252B42;
-    border-radius: 1em;
+
     padding: 12px 16px;
     text-decoration: none;
   }
@@ -1107,6 +1165,14 @@ tbody tr:hover {
 }
 
 @media (max-width: 600px) {
+    .col img {
+        width: 100px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    
+
     .row {
         width: 100%;
         justify-content: space-around;
@@ -1127,6 +1193,13 @@ tbody tr:hover {
 
 
 @media (min-width: 601px) and (max-width: 768px) {
+    .col img {
+        width: 125px;
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+    }
+
     .row {
         width: 90%;
         justify-content: space-between;
@@ -1147,6 +1220,13 @@ tbody tr:hover {
 
 
 @media (min-width: 769px) and (max-width: 992px) {
+    .col img {
+        width: 150px;
+        padding: 14px;
+        display: flex;
+        justify-content: center;
+    }
+
     .row {
         width: 85%;
     }
@@ -1166,6 +1246,13 @@ tbody tr:hover {
 
 
 @media (min-width: 993px) and (max-width: 1200px) {
+    .col img {
+        width: 160px;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
     .row {
         width: 80%;
     }

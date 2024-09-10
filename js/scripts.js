@@ -32,6 +32,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 };
 
+
 function atualizarValoresIngressos() {
     const dataAtual = new Date();
     
@@ -102,6 +103,7 @@ function countdown(){
     return { days: days, hours: hours, minutes: minutes, seconds: seconds };
     };
 };
+
 
 // Seleciona automaticamente o primeiro curso quando a página carrega
 window.addEventListener('DOMContentLoaded', (event) => {
