@@ -18,52 +18,85 @@ const courseData = [
 ];
 // Adiciona um evento de clique para cada curso
 courses.forEach((course, index) => {
-    course.addEventListener("click", function() {
+    course.addEventListener('click', function() {
         // Remove a classe "selected" de todos os cursos
-        courses.forEach(c => c.classList.remove("selected"));
+        courses.forEach(c => c.classList.remove('selected'));
         
         // Adiciona a classe "selected" apenas ao curso clicado
-        this.classList.add("selected");
-      
-        // Determina o número do curso com base na classe do curso
-        const courseNumber = this.classList.contains('course1') ? 1 : 2;
+        this.classList.add('selected');
 
-        // Alterna para o curso correspondente
-        switchCourse(index + 1); // Usando o índice + 1 para determinar o curso
+        // Atualiza o título e o ícone da página
+        titleElement.textContent = courseData[index].title;
+        faviconElement.href = courseData[index].icon;
+        
+        // Alterna o conteúdo das abas com base no curso selecionado
+        if (index === 0) { // Curso 1 selecionado
+            showCourseContent('course1');
+        } else if (index === 1) { // Curso 2 selecionado
+            showCourseContent('course2');
+        }
     });
 });
 
-// Função para alterar o curso ativo
-function switchCourse(courseId) {
-    // Mostra o conteúdo do curso selecionado
-    document.getElementById('course' + courseId + '-content').style.display = 'block';
+// Variável para armazenar a aba ativa
+let activeTab = 'Ementa';
 
-    // Seleciona automaticamente a primeira aba dentro do curso atual
-    const firstTab = document.querySelector(`#tab${courseId} .tablink`);
-    if (firstTab) {
-        firstTab.click(); // Simula o clique na primeira aba do curso
+// Função para mostrar o conteúdo do curso selecionado
+function showCourseContent(courseId) {
+    // Esconde todo o conteúdo dos cursos
+    document.querySelectorAll('.tabcontent').forEach(tab => {
+        tab.style.display = 'none';
+    });
+
+    // Esconde os botões de abas do curso não selecionado
+    document.querySelectorAll('.tab, .tab2').forEach(tab => {
+        tab.style.display = 'none';
+    });
+    
+    // Remove a classe "active" de todas as abas
+    document.querySelectorAll('.tablink').forEach(tablink => {
+        tablink.classList.remove('active');
+    });
+
+    // Mostra o conteúdo do curso correspondente
+    if(courseId === 'course1') {
+        document.querySelectorAll('#Ementa, #ObjetivoGeral, #Metodologia, #Recursos').forEach(tab => {
+            document.querySelector('.tab').style.display = 'flex';
+            document.getElementById(activeTab).style.display = 'block';
+            document.querySelector(`[onclick="openTab(event, '${activeTab}')"]`).classList.add('active');
+        });
+        
+    } else if(courseId === 'course2') {
+        document.querySelectorAll('#Ementa2, #ObjetivoGeral2, #Metodologia2, #Recursos2').forEach(tab => {
+            document.querySelector('.tab2').style.display = 'flex';
+            document.getElementById(activeTab + '2').style.display = 'block';
+            document.querySelector(`[onclick="openTab(event, '${activeTab}2')"]`).classList.add('active');
+        });
     }
-}
+};
 
-// Função para abrir abas
+// Função para abrir abas individuais
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
 
     // Esconde todo o conteúdo das tabs
-    tabcontent = document.getElementsByClassName("tabcontent");
+    tabcontent = document.getElementsByClassName('tabcontent');
     for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+        tabcontent[i].style.display = 'none';
     }
 
     // Remove a classe "active" de todos os links
-    tablinks = document.getElementsByClassName("tablink");
+    tablinks = document.getElementsByClassName('tablink');
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].className = tablinks[i].className.replace(' active', '');
     }
 
     // Mostra a tab ativa e adiciona a classe "active" ao link clicado
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+
+    // Armazena a aba ativa
+    activeTab = tabName;
 };
 
 
@@ -91,9 +124,7 @@ function atualizarValoresIngressos() {
     }
 };
 
-window.onload = atualizarValoresIngressos;
-
-document.addEventListener("DOMContentLoaded", function(){
+function countdown () {
     var SEC = 1000;
     var MIN = 60 * SEC;
     var HR = 60 * MIN;
@@ -138,10 +169,21 @@ document.addEventListener("DOMContentLoaded", function(){
 
     return { days: days, hours: hours, minutes: minutes, seconds: seconds };
     };
-});
+};
 
-// Evento ao carregar a página
-window.addEventListener('DOMContentLoaded', (event) => {
-    // Seleciona automaticamente o primeiro curso e abre sua primeira tab
-    switchCourse(1); // Abre o curso 1 por padrão
-});
+window.onload = atualizarValoresIngressos;
+
+// Seleciona automaticamente o primeiro curso quando a página carrega
+document.addEventListener("DOMContentLoaded", function(){
+    if (courses.length > 0) {
+        // Adiciona a classe 'selected' ao primeiro curso
+        courses[0].classList.add('selected');
+        courses[0].click();
+        
+        // Atualiza o título e o ícone da página
+        titleElement.textContent = courseData[0].title;
+        faviconElement.href = courseData[0].icon;
+    }
+
+    countdown();
+}); 

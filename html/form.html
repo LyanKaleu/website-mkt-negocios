@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Inscrição</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../css/form.css">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -13,59 +15,79 @@
     <link rel="manifest" href="assets/site.webmanifest">
 </head>
 <body>
-    <main>
-        <div id="formulario">
-            <h1>INSCRIÇÃO: CURSOS DE EXTENSÃO</h1>
+    <section class="container">
+        <header>
+            <h1>Congresso Acadêmico: Inscrições</h1>
             <p>Local: A confirmar</p>
-            <p>Data: 26/10/2024 - 09, 23 e 30/11/2024</p>
-
-            <form name="submit-to-google-sheet" id="inscricao-form" action="#" method="post" autocomplete="on">
-                <div class="campo">
+            <p>Data: A definir</p>
+        </header>
+        <form class="form" name="submit-to-google-sheet" id="inscricao-form" action="#" method="post" autocomplete="on">
+            <div class="input-box">
+                <div class="box-itens">
                     <span class="material-symbols-outlined">person</span>
-                    <input type="text" name="nome" id="nome" placeholder="Nome Completo" autocomplete="name" required maxlength="70">
-                    <label for="nome">Nome Completo</label>
+                    <label class="subtitle" for="nome">Nome Completo</label>
                 </div>
+                <input type="text" name="nome" id="nome" placeholder="Insira o Nome Completo" autocomplete="name" required maxlength="70">
+            </div>
 
-
-                <div class="campo">
+            <div class="input-box">
+                <div class="box-itens">
                     <span class="material-symbols-outlined">email</span>
-                    <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" required maxlength="30">
-                    <label for="email">Email</label>
+                    <label class="subtitle" for="email">Email</label>
                 </div>
+                <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" required maxlength="30">
+            </div>
 
-                <div class="campo">
+            <div class="input-box">
+                <div class="box-itens">
                     <span class="material-symbols-outlined">phone</span>
-                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone: (xx) xxxxx-xxxx" autocomplete="tel" required maxlength="15">
+                    <label class="subtitle" for="telefone">Telefone</label>
                 </div>
+                <input type="tel" name="telefone" id="telefone" placeholder="Telefone: (xx) xxxxx-xxxx" autocomplete="tel" required maxlength="15">
+            </div>
 
-                <div class="campo">
+            
+            <div class="input-box">
+                <div class="box-itens">
                     <span class="material-symbols-outlined">list</span>
-                    <select name="categoria" id="categoria" required>
-                        <option value="" disabled selected>Selecione a categoria</option>
-                        <option value="estudante">Estudante</option>
-                        <option value="demais">Demais</option>
-                    </select>
-                    <label for="categoria">Categoria</label>
+                    <label class="subtitle" for="categoria">Categoria</label>
                 </div>
+                <div class="column">
+                    <div class="select-box">
+                        <select name="categoria" id="categoria" class="select" required>
+                            <option value="" hidden>Selecione a categoria</option>
+                            <option value="estudante">Estudante</option>
+                            <option value="demais">Demais</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-                <div class="campo">
+            <div class="input-box">
+                <div class="box-itens">
                     <span class="material-symbols-outlined">location_on</span>
-                    <select name="modalidade" id="modalidade" required>
-                        <option value="" disabled selected>Selecione a modalidade</option>
-                        <option value="presencial">Semipresencial</option>
-                        <option value="online">Online</option>
-                    </select>
-                    <label for="modadlidade">Modalidade</label>
+                    <label class="subtitle" for="modadlidade">Modalidade</label>
                 </div>
+                <div class="column">
+                    <div class="select-box">
+                        <select name="modalidade" id="modalidade" class="select" required>
+                            <option value="" hidden>Selecione a modalidade</option>
+                            <option value="presencial">Semipresencial</option>
+                            <option value="online">Online</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+             
+            <div class="btns">
+                <button class="submitBTN" type="submit">Enviar</button>
+                <button class="backBTN" id="back-button" title="Voltar" onclick="window.history.back()">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+            </div>
+        </form>
+    </section>
 
-                <input id="submitBtn" type="submit" value="Enviar">
-            </form>
-        </div>
-    </main>
-
-    <button id="back-button" title="Voltar" onclick="window.history.back()">
-        <span class="material-symbols-outlined">arrow_back</span>
-    </button>
 
     <script>
         
