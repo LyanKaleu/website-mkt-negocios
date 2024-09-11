@@ -62,105 +62,116 @@
             </div>
         </section>
         
-        <section>
-            <div class="tab">
-                <a class="tablink" onclick="openTab(event, 'Ementa')" id="defaultOpen"><h5>EMENTA</h5></a>
-                <a class="tablink" onclick="openTab(event, 'ObjetivoGeral')"><h5>OBJETIVO GERAL</h5></a>
-                <a class="tablink" onclick="openTab(event, 'Metodologia')"><h5>METODOLOGIA</h5></a>
-                <a class="tablink" onclick="openTab(event, 'Recursos')"><h5>RECURSOS DIDÁTICOS</h5></a>
+        <section id="course-tabs">
+            <div class="tab" id="tab1">
+                <a class="tablink" onclick="openTab(event, 'Ementa1')" id="defaultOpen1"><h5>EMENTA</h5></a>
+                <a class="tablink" onclick="openTab(event, 'ObjetivoGeral1')"><h5>OBJETIVO GERAL</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Metodologia1')"><h5>METODOLOGIA</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Recursos1')"><h5>RECURSOS DIDÁTICOS</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Avaliacao1')"><h5>AVALIAÇÃO APRENDIZAGEM</h5></a>
             </div>
 
-            <div id="Ementa" class="tabcontent info-box">
-                <h3>Ementa</h3>
-                <ul>
-                    <li>Mix de Marketing (os 5P's);</li>
-                    <li>Pesquisa e Segmentação de Mercado;</li>
-                    <li>Comportamento do Consumidor;</li>
-                    <li>Marketing Tradicional x Marketing Digital;</li>
-                    <li>Setor de Vendas;</li>
-                    <li>Planejamento e Estratégias de Vendas;</li>
-                    <li>E-commerce;</li>
-                    <li>Atendimento e Momentos da Verdade;</li>
-                    <li>Estilos de Negociação</li>
-                </ul>
-            </div>
-
-            <div id="ObjetivoGeral" class="tabcontent info-box">
-                <h3>Objetivo Geral</h3>
-                <p>Apresentar e discutir os fundamentos da Gestão de Marketing, assim como o Planejamento e a elaboração de estratégias de vendas para empresas de diferentes áreas de atuação.</p>
-            </div>
-
-            <div id="Metodologia" class="tabcontent info-box">
-                <h3>Metodologia</h3>
-                <p>Este curso está estruturado no formato híbrido, sendo 30 h/a presenciais e 30 h/a no on-line. A primeira parte se desenvolve através de aulas expositivas dialogadas, com ampla participação do(a)s aluno(a)s por meio de: exposição teórica; discussão de cases; estudo de textos e artigos científicos; resolução de exercícios; reflexões sobre o perfil de empresas no Instagram, Youtube e Site; análise de vídeos. Será proposto uma visita técnica a duas empresas para aplicação de instrumento de pesquisa, através de entrevista e questionário, com posterior tabulação e discussão dos resultados. `
-                </p>
-                <p>
-                A segunda parte consiste de videoaulas gravadas, bem como 02 aulas sincrônicas, preferencialmente em 02 sábados após a conclusão da primeira parte, de 17h às 18h.
-                </p>
-            </div>
-            <div id="Recursos" class="tabcontent info-box">
-                <div class="paragraph">
-                    <h3>Recursos Didáticos</h3>
-                    <p>Quadro branco, pincéis, projetor multimídia, textos e artigos científicos (periódicos, sites, portais, livros), vídeos (app “Youtube”) e filmes (Netflix e/ou Amazon Prime Video), videoaulas gravadas pelo professor;</p>
+            <div class="tabcontent-group" id="course1-content">
+                <div id="Ementa1" class="tabcontent info-box">
+                    <h3>Ementa</h3>
+                    <ul>
+                        <li>Mix de Marketing (os 5P's);</li>
+                        <li>Pesquisa e Segmentação de Mercado;</li>
+                        <li>Comportamento do Consumidor;</li>
+                        <li>Marketing Tradicional x Marketing Digital;</li>
+                        <li>Setor de Vendas;</li>
+                        <li>Planejamento e Estratégias de Vendas;</li>
+                        <li>E-commerce;</li>
+                        <li>Atendimento e Momentos da Verdade;</li>
+                        <li>Estilos de Negociação</li>
+                    </ul>
                 </div>
-                <div class="paragraph">
-                    <h3>Avaliação da Aprendizagem</h3>
-                    <p>A avaliação terá o caráter qualitativo e quantitativo, através da realização de exercícios com questões objetivas e subjetivas, trabalhos em equipe (com apresentação de seminário on-line) e pontualidade na devolução das atividades avaliativas (fundamental para um bom desenvolvimento do processo ensino-aprendizagem da disciplina).
+                <div id="ObjetivoGeral1" class="tabcontent info-box">
+                    <h3>Objetivo Geral</h3>
+                    <p>Apresentar e discutir os fundamentos da Gestão de Marketing, assim como o Planejamento e a elaboração de estratégias de vendas para empresas de diferentes áreas de atuação.</p>
+                </div>
+                <div id="Metodologia1" class="tabcontent info-box">
+                    <h3>Metodologia</h3>
+                    <p>Este curso está estruturado no formato híbrido, sendo 30 h/a presenciais e 30 h/a no on-line. A primeira parte se desenvolve através de aulas expositivas dialogadas, com ampla participação do(a)s aluno(a)s por meio de: exposição teórica; discussão de cases; estudo de textos e artigos científicos; resolução de exercícios; reflexões sobre o perfil de empresas no Instagram, Youtube e Site; análise de vídeos. Será proposto uma visita técnica a duas empresas para aplicação de instrumento de pesquisa, através de entrevista e questionário, com posterior tabulação e discussão dos resultados. `
                     </p>
                     <p>
-                        As avaliações de segunda chamada poderão ser no estilo “oral” e individual.
+                    A segunda parte consiste de videoaulas gravadas, bem como 02 aulas sincrônicas, preferencialmente em 02 sábados após a conclusão da primeira parte, de 17h às 18h.
                     </p>
+                </div>
+                <div id="Recursos1" class="tabcontent info-box">
+                    <div class="paragraph">
+                        <h3>Recursos Didáticos</h3>
+                        <p>Quadro branco, pincéis, projetor multimídia, textos e artigos científicos (periódicos, sites, portais, livros), vídeos (app “Youtube”) e filmes (Netflix e/ou Amazon Prime Video), videoaulas gravadas pelo professor;</p>
+                    </div>
+                </div>
+                <div id="Avaliacao1" class="tabcontent info-box">
+                        <div class="paragraph">
+                            <h3>Avaliação da Aprendizagem</h3>
+                            <p>A avaliação terá o caráter qualitativo e quantitativo, através da realização de exercícios com questões objetivas e subjetivas, trabalhos em equipe (com apresentação de seminário on-line) e pontualidade na devolução das atividades avaliativas (fundamental para um bom desenvolvimento do processo ensino-aprendizagem da disciplina).
+                            </p>
+                            <p>
+                                As avaliações de segunda chamada poderão ser no estilo “oral” e individual.
+                            </p>
+                        </div>
                 </div>
             </div>
 
             <!-- Conteúdo das abas para o segundo curso -->
-            <div id="Ementa2" class="tabcontent info-box">
-                <h3>Ementa</h3>
-                <ul>
-                    <li>Ambientes organizacionais.</li>
-                    <li>Oportunidade de Negócios.</li>
-                    <li>Perfil Empreendedor.</li>
-                    <li>Método Canvas.</li>
-                    <li>Plano de Negócio.</li>
-                    <li>Captação de Recursos Financeiros.</li>
-                    <li>Abertura de Novos Negócios.</li>
-                    <li>Inovação.</li>
-                    <li>Startups.</li>
-                    <li>Gênese e evolução do movimento empreendedor.</li>
-                    <li>Conceito de EMPREENDEDORISMO.</li>
-                    <li>A ação empreendedora de uma economia globalizada e competitiva.</li>
-                    <li>Estrutura do PLANO DE NEGÓCIO.</li>
-                    <li>A busca de oportunidades de negócios.</li>
-                    <li>Orientando o empreendedor na abertura do negócio.</li>
-                    <li>Pequenos projetos de empreendedorismo.</li>
-                    <li>Gerenciamento dos aspectos operacionais do negócio.</li>
-                  </ul>
-                  
+            <div class="tab" id="tab2" style="display: none;">
+                <a class="tablink" onclick="openTab(event, 'Ementa2')" id="defaultOpen2"><h5>EMENTA</h5></a>
+                <a class="tablink" onclick="openTab(event, 'ObjetivoGeral2')"><h5>OBJETIVO GERAL</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Metodologia2')"><h5>METODOLOGIA</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Recursos2')"><h5>RECURSOS DIDÁTICOS</h5></a>
+                <a class="tablink" onclick="openTab(event, 'Avaliacao2')"><h5>AVALIAÇÃO APRENDIZAGEM</h5></a>
             </div>
 
-            <div id="ObjetivoGeral2" class="tabcontent info-box">
-                <h3>Objetivo Geral</h3>
-                <p>Apresentar e discutir os fundamentos da Gestão de Marketing, assim como o Planejamento e a elaboração de estratégias de vendas para empresas de diferentes áreas de atuação..</p>
-            </div>
-
-            <div id="Metodologia2" class="tabcontent info-box">
-                <h3>Metodologia</h3>
-                <p>Este curso está estruturado no formato híbrido, sendo 30 h/a presenciais e 30 h/a no on-line. A primeira parte se desenvolve através de aulas expositivas dialogadas, com ampla participação do(a)s aluno(a)s por meio de: exposição teórica; discussão de cases; estudo de textos e artigos científicos; resolução de exercícios; reflexões sobre o perfil de empresas no Instagram, Youtube e Site; análise de vídeos. Será proposto uma visita técnica a duas empresas para aplicação de instrumento de pesquisa, através de entrevista e questionário, com posterior tabulação e discussão dos resultados. </p>
-                <p>A segunda parte consiste de videoaulas gravadas, bem como 02 aulas sincrônicas, preferencialmente em 02 sábados após a conclusão da primeira parte, de 17h às 18h.</p>
-            </div>
-
-            <div id="Recursos2" class="tabcontent info-box">
-                <div class="paragraph">
-                    <h3>Recursos Didáticos</h3>
-                    <p>Quadro branco, pincéis, projetor multimídia, textos e artigos científicos (periódicos, sites, portais, livros), vídeos (app “Youtube”) e filmes (Netflix e/ou Amazon Prime Video), videoaulas gravadas pelo professor;</p>
+            <div class="tab-content-group" id="course2-content" style="display: none;">
+                <div id="Ementa2" class="tabcontent info-box">
+                    <h3>Ementa</h3>
+                    <ul>
+                        <li>Ambientes organizacionais.</li>
+                        <li>Oportunidade de Negócios.</li>
+                        <li>Perfil Empreendedor.</li>
+                        <li>Método Canvas.</li>
+                        <li>Plano de Negócio.</li>
+                        <li>Captação de Recursos Financeiros.</li>
+                        <li>Abertura de Novos Negócios.</li>
+                        <li>Inovação.</li>
+                        <li>Startups.</li>
+                        <li>Gênese e evolução do movimento empreendedor.</li>
+                        <li>Conceito de EMPREENDEDORISMO.</li>
+                        <li>A ação empreendedora de uma economia globalizada e competitiva.</li>
+                        <li>Estrutura do PLANO DE NEGÓCIO.</li>
+                        <li>A busca de oportunidades de negócios.</li>
+                        <li>Orientando o empreendedor na abertura do negócio.</li>
+                        <li>Pequenos projetos de empreendedorismo.</li>
+                        <li>Gerenciamento dos aspectos operacionais do negócio.</li>
+                    </ul>
                 </div>
-                <div class="paragraph">
-                    <h3>Avaliação da Aprendizagem</h3>
-                    <p>A avaliação terá o caráter qualitativo e quantitativo, através da realização de exercícios com questões objetivas e subjetivas, trabalhos em equipe (com apresentação de seminário on-line) e pontualidade na devolução das atividades avaliativas (fundamental para um bom desenvolvimento do processo ensino-aprendizagem da disciplina).
-                    </p>
-                    <p>
-                        As avaliações de segunda chamada poderão ser no estilo “oral” e individual.
-                    </p>
+                <div id="ObjetivoGeral2" class="tabcontent info-box">
+                    <h3>Objetivo Geral</h3>
+                    <p>Apresentar e discutir os fundamentos da Gestão de Marketing, assim como o Planejamento e a elaboração de estratégias de vendas para empresas de diferentes áreas de atuação..</p>
+                </div>
+                <div id="Metodologia2" class="tabcontent info-box">
+                    <h3>Metodologia</h3>
+                    <p>Este curso está estruturado no formato híbrido, sendo 30 h/a presenciais e 30 h/a no on-line. A primeira parte se desenvolve através de aulas expositivas dialogadas, com ampla participação do(a)s aluno(a)s por meio de: exposição teórica; discussão de cases; estudo de textos e artigos científicos; resolução de exercícios; reflexões sobre o perfil de empresas no Instagram, Youtube e Site; análise de vídeos. Será proposto uma visita técnica a duas empresas para aplicação de instrumento de pesquisa, através de entrevista e questionário, com posterior tabulação e discussão dos resultados. </p>
+                    <p>A segunda parte consiste de videoaulas gravadas, bem como 02 aulas sincrônicas, preferencialmente em 02 sábados após a conclusão da primeira parte, de 17h às 18h.</p>
+                </div>
+                <div id="Recursos2" class="tabcontent info-box">
+                    <div class="paragraph">
+                        <h3>Recursos Didáticos</h3>
+                        <p>Quadro branco, pincéis, projetor multimídia, textos e artigos científicos (periódicos, sites, portais, livros), vídeos (app “Youtube”) e filmes (Netflix e/ou Amazon Prime Video), videoaulas gravadas pelo professor;</p>
+                    </div>
+                </div>
+                <div id="Avaliacao2" class="tabcontent info-box">
+                    <div class="paragraph">
+                        <h3>Avaliação da Aprendizagem</h3>
+                        <p>A avaliação terá o caráter qualitativo e quantitativo, através da realização de exercícios com questões objetivas e subjetivas, trabalhos em equipe (com apresentação de seminário on-line) e pontualidade na devolução das atividades avaliativas (fundamental para um bom desenvolvimento do processo ensino-aprendizagem da disciplina).
+                        </p>
+                        <p>
+                            As avaliações de segunda chamada poderão ser no estilo “oral” e individual.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
