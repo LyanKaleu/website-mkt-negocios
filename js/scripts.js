@@ -1,14 +1,33 @@
 // Seleciona todos os containers de curso
 const courses = document.querySelectorAll(".course");
 
+// Seleciona os elementos do título e do ícone
+const titleElement = document.querySelector("title");
+const faviconElement = document.querySelector("link[rel='icon']");
+
+// Define os novos títulos e ícones para cada curso (ajuste os caminhos dos ícones)
+const courseData = [
+    {
+        title: "Curso de Marketing & Vendas",
+        icon: "assets/course01.ico"
+    },
+    {
+        title: "Curso de Gestão de Negócios & Empreendedorismo",
+        icon: "assets/course02.ico"
+    }
+];
 // Adiciona um evento de clique para cada curso
-courses.forEach(course => {
+courses.forEach((course, index) => {
     course.addEventListener("click", function() {
         // Remove a classe "selected" de todos os cursos
         courses.forEach(c => c.classList.remove("selected"));
         
         // Adiciona a classe "selected" apenas ao curso clicado
         this.classList.add("selected");
+
+        // Atualiza o título e o ícone da página
+        titleElement.textContent = courseData[index].title;
+        faviconElement.href = courseData[index].icon;
     });
 });
 
@@ -110,6 +129,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (courses.length > 0) {
         // Adiciona a classe 'selected' ao primeiro curso
         courses[0].classList.add('selected');
+
+        // Atualiza o título e o ícone da página
+        titleElement.textContent = courseData[0].title;
+        faviconElement.href = courseData[0].icon;
     }
 
     // Abre a primeira tab (EMENTA) por padrão e adiciona a classe "active" ao primeiro link
