@@ -2,16 +2,35 @@
 const courses = document.querySelectorAll(".course");
 
 // Adiciona um evento de clique para cada curso
-courses.forEach(course => {
+courses.forEach((course, index) => {
     course.addEventListener("click", function() {
         // Remove a classe "selected" de todos os cursos
         courses.forEach(c => c.classList.remove("selected"));
         
         // Adiciona a classe "selected" apenas ao curso clicado
         this.classList.add("selected");
+
+        // Determina o número do curso com base na classe do curso
+        const courseNumber = this.classList.contains('course1') ? 1 : 2;
+
+        // Alterna para o curso correspondente
+        switchCourse(index + 1); // Usando o índice + 1 para determinar o curso
     });
 });
 
+// Função para alterar o curso ativo
+function switchCourse(courseId) {
+    // Mostra o conteúdo do curso selecionado
+    document.getElementById('course' + courseId + '-content').style.display = 'block';
+
+    // Seleciona automaticamente a primeira aba dentro do curso atual
+    const firstTab = document.querySelector(`#tab${courseId} .tablink`);
+    if (firstTab) {
+        firstTab.click(); // Simula o clique na primeira aba do curso
+    }
+}
+
+// Função para abrir abas
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
 
@@ -57,7 +76,9 @@ function atualizarValoresIngressos() {
     }
 };
 
-function countdown(){
+window.onload = atualizarValoresIngressos;
+
+document.addEventListener("DOMContentLoaded", function(){
     var SEC = 1000;
     var MIN = 60 * SEC;
     var HR = 60 * MIN;
@@ -102,18 +123,12 @@ function countdown(){
 
     return { days: days, hours: hours, minutes: minutes, seconds: seconds };
     };
-};
+});
 
 
-// Seleciona automaticamente o primeiro curso quando a página carrega
+
+// Evento ao carregar a página
 window.addEventListener('DOMContentLoaded', (event) => {
-    if (courses.length > 0) {
-        // Adiciona a classe 'selected' ao primeiro curso
-        courses[0].classList.add('selected');
-    }
-
-    // Abre a primeira tab (EMENTA) por padrão e adiciona a classe "active" ao primeiro link
-    document.getElementById("defaultOpen").click();
-    atualizarValoresIngressos();
-    countdown();
+    // Seleciona automaticamente o primeiro curso e abre sua primeira tab
+    switchCourse(1); // Abre o curso 1 por padrão
 });
