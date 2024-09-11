@@ -1,6 +1,21 @@
 // Seleciona todos os containers de curso
 const courses = document.querySelectorAll(".course");
 
+// Seleciona os elementos do título e do ícone
+const titleElement = document.querySelector("title");
+const faviconElement = document.querySelector("link[rel='icon']");
+
+// Define os novos títulos e ícones para cada curso (ajuste os caminhos dos ícones)
+const courseData = [
+    {
+        title: "Curso de Marketing & Vendas",
+        icon: "assets/course01.ico"
+    },
+    {
+        title: "Curso de Gestão de Negócios & Empreendedorismo",
+        icon: "assets/course02.ico"
+    }
+];
 // Adiciona um evento de clique para cada curso
 courses.forEach((course, index) => {
     course.addEventListener("click", function() {
@@ -9,7 +24,7 @@ courses.forEach((course, index) => {
         
         // Adiciona a classe "selected" apenas ao curso clicado
         this.classList.add("selected");
-
+      
         // Determina o número do curso com base na classe do curso
         const courseNumber = this.classList.contains('course1') ? 1 : 2;
 
@@ -124,8 +139,6 @@ document.addEventListener("DOMContentLoaded", function(){
     return { days: days, hours: hours, minutes: minutes, seconds: seconds };
     };
 });
-
-
 
 // Evento ao carregar a página
 window.addEventListener('DOMContentLoaded', (event) => {
