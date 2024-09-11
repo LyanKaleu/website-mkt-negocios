@@ -575,7 +575,7 @@ p {
     text-align: justify;
 }
 
-.tab {
+.tab, .tab2 {
     display: flex;
     justify-content: space-around;
 }
@@ -624,7 +624,7 @@ p {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .tab {
+    .tab, .tab2 {
         display: flex;
         overflow-x: auto;
         flex-direction: row;
@@ -632,7 +632,7 @@ p {
         -webkit-overflow-scrolling: touch; /* Suaviza o scroll em dispositivos iOS */
     }
 
-    .tab::-webkit-scrollbar {
+    .tab::-webkit-scrollbar, .tab2::-webkit-scrollbar {
         display: none;
       }
 
