@@ -534,7 +534,7 @@ p {
 
 .studant p, .entire p {
     flex: 1;
-    padding: 20px;
+    padding: 12px;
     display: flex;
     color: #252B42;
     align-items: center;
