@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Inscrição</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../css/form.css">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -14,58 +16,61 @@
 </head>
 <body>
     <main>
-        <div id="formulario">
-            <h1>INSCRIÇÃO: CURSOS DE EXTENSÃO</h1>
-            <p>Local: A confirmar</p>
-            <p>Data: 26/10/2024 - 09, 23 e 30/11/2024</p>
-
-            <form name="submit-to-google-sheet" id="inscricao-form" action="#" method="post" autocomplete="on">
-                <div class="campo">
-                    <span class="material-symbols-outlined">person</span>
-                    <input type="text" name="nome" id="nome" placeholder="Nome Completo" autocomplete="name" required maxlength="70">
-                    <label for="nome">Nome Completo</label>
+        <section class="container">
+            <header>
+                <h1>Cursos de extensão</h1>
+                <p>Local: Cesvale - Riverside</p>
+                <p>Data: 26 de outubro - 09, 23 e 30 de novembro de 2024</p>
+            </header>
+            <form class="form" name="submit-to-google-sheet" id="inscricao-form" action="#" method="post" autocomplete="on">
+                <div class="input-box">
+                    <div class="box-itens">
+                        <span class="material-symbols-outlined">person</span>
+                        <label class="subtitle" for="nome">Nome Completo</label>
+                    </div>
+                    <input type="text" name="nome" id="nome" placeholder="Insira o Nome Completo" autocomplete="name" required maxlength="70">
                 </div>
-
-
-                <div class="campo">
-                    <span class="material-symbols-outlined">email</span>
+                <div class="input-box">
+                    <div class="box-itens">
+                        <span class="material-symbols-outlined">email</span>
+                        <label class="subtitle" for="email">Email</label>
+                    </div>
                     <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" required maxlength="30">
-                    <label for="email">Email</label>
                 </div>
-
-                <div class="campo">
-                    <span class="material-symbols-outlined">phone</span>
+                <div class="input-box">
+                    <div class="box-itens">
+                        <span class="material-symbols-outlined">phone</span>
+                        <label class="subtitle" for="telefone">Telefone</label>
+                    </div>
                     <input type="tel" name="telefone" id="telefone" placeholder="Telefone: (xx) xxxxx-xxxx" autocomplete="tel" required maxlength="15">
                 </div>
-
-                <div class="campo">
-                    <span class="material-symbols-outlined">list</span>
-                    <select name="categoria" id="categoria" required>
-                        <option value="" disabled selected>Selecione a categoria</option>
-                        <option value="estudante">Estudante</option>
-                        <option value="demais">Demais</option>
-                    </select>
-                    <label for="categoria">Categoria</label>
+        
+                <div class="input-box">
+                    <div class="box-itens">
+                        <span class="material-symbols-outlined">list</span>
+                        <label class="subtitle" for="categoria">Categoria</label>
+                    </div>
+                    <div class="column">
+                        <div class="select-box">
+                            <select name="categoria" id="categoria" class="select" required>
+                                <option value="" hidden>Selecione a categoria</option>
+                                <option value="estudante">Estudante</option>
+                                <option value="demais">Demais</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="campo">
-                    <span class="material-symbols-outlined">location_on</span>
-                    <select name="modalidade" id="modalidade" required>
-                        <option value="" disabled selected>Selecione a modalidade</option>
-                        <option value="presencial">Semipresencial</option>
-                        <option value="online">Online</option>
-                    </select>
-                    <label for="modadlidade">Modalidade</label>
+        
+                <div class="btns">
+                    <button class="submitBTN" type="submit">Enviar</button>
+                    <button class="backBTN" id="back-button" title="Voltar" onclick="window.history.back()">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
                 </div>
-
-                <input id="submitBtn" type="submit" value="Enviar">
             </form>
-        </div>
+        </section>
     </main>
 
-    <button id="back-button" title="Voltar" onclick="window.history.back()">
-        <span class="material-symbols-outlined">arrow_back</span>
-    </button>
 
     <script>
         
@@ -117,19 +122,19 @@
 
                     if (categoria === 'estudante') {
                         if (hoje <= new Date('2024-09-30')) {
-                            url = ''; // 1 lote estudante
+                            url = 'https://mpago.la/1tTbVUK'; // 1 lote estudante
                         } else if (hoje <= new Date('2024-10-01')) {
-                            url = ''; // 2 lote estudante
+                            url = 'https://mpago.la/2NdG5FZ'; // 2 lote estudante
                         } else {
-                            url = ''; // 3 lote estudante
+                            url = 'https://mpago.la/1zVpyNh'; // 3 lote estudante
                         }
                     } else {
                         if (hoje <= new Date('2024-09-30')) {
-                            url = ''; // 1 lote demais
+                            url = 'https://mpago.la/1nHLrTG'; // 1 lote demais
                         } else if (hoje <= new Date('2024-10-01')) {
-                            url = ''; // 2 lote demais
+                            url = 'https://mpago.la/2piU3iR'; // 2 lote demais
                         } else {
-                            url = ''; // 3 lote demais
+                            url = 'https://mpago.la/2Fae7YX'; // 3 lote demais
                         }
                     }
 
@@ -142,16 +147,16 @@
             const mainContent = document.querySelector('main');
             mainContent.innerHTML = `
             <div id="sucesso">
-                <h1>Inscrição realizada com sucesso!</h1>
-                <p>Redirecionando para o pagamento...</p>
+                <h1 style="color: #fff">Inscrição realizada com sucesso!</h1>
+                <p style="color: #fff">Redirecionando para o pagamento...</p>
             </div>`;
 
             setTimeout(function () {
-                window.location.href = link;
+                window.open(link, '_blank');
             }, 5000);
         }
 
-        const scriptURL = '';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw9_50AxGJAn_n0V_P5wQQ-VKBRmYe-WOKIHIqHeW1OftT1CR-vFcBeio-NDMGSLjwagw/exec';
         const form = document.forms['submit-to-google-sheet']; // formulario no index
 
         form.addEventListener('submit', e =>
