@@ -949,6 +949,28 @@ tbody tr:hover {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.alert-registration {
+    width: 40%;
+    display: flex;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: justify;
+    align-items: flex-end;
+    background-color: #FF4646;
+}
+
+.alert-registration h5:last-child  {
+    height: 50px;
+    display: flex;
+    color: #FF4646;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    align-items: center;
+    background-color: #fff;
+}
+
 
 .batch-time {
     width: 100%;
@@ -994,9 +1016,23 @@ tbody tr:hover {
     #inscription p {
         font-size: 1.2em;
     }
+    
+    .alert-registration {
+        width: 300px;
+        margin-top: 15px;
+        padding: 10px 20px;
+    }
+    
+    .alert-registration h5 {
+        font-size: 0.8em;
+    }
+    
+    .alert-registration h5:last-child  {
+        height: 100px;
+    }
 
     .studant, .entire {
-        flex: 1;
+        width: 150px;
         height: 150px;
         margin: 0 10px;
     }
@@ -1016,6 +1052,26 @@ tbody tr:hover {
         font-size: 1.4em;
     }
 
+    .alert-registration {
+        width: 400px;
+        margin-top: 15px;
+        padding: 10px 20px;
+    }
+    
+    .alert-registration h5 {
+        font-size: 1em;
+    }
+
+    .alert-registration h5:last-child  {
+        height: 100px;
+    }
+    
+    .studant, .entire {
+        width: 200px;
+        height: 150px;
+        margin: 0 10px;
+    }
+
     table, th, td {
         font-size: 0.9em;
         padding: 15px;
@@ -1032,19 +1088,59 @@ tbody tr:hover {
         font-size: 1.5em;
     }
 
+    .alert-registration {
+        width: 500px;
+        margin-top: 15px;
+        padding: 10px 20px;
+    }
+    
+    .alert-registration h5 {
+        font-size: 1.2em;
+    }
+
+    .alert-registration h5:last-child  {
+        height: 100px;
+    }
+    
+    .studant, .entire {
+        width: 250px;
+        height: 150px;
+        margin: 0 10px;
+    }
+
     table, th, td {
         font-size: 1em;
         padding: 20px;
     }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 993px) and (max-width: 1200px) {
     #inscription h2 {
         font-size: 2.5em;
     }
 
     #inscription p {
         font-size: 1.5em;
+    }
+
+    .alert-registration {
+        width: 500px;
+        margin-top: 15px;
+        padding: 10px 20px;
+    }
+    
+    .alert-registration h5 {
+        font-size: 1.2em;
+    }
+
+    .alert-registration h5:last-child  {
+        height: 100px;
+    }
+    
+    .studant, .entire {
+        width: 250px;
+        height: 150px;
+        margin: 0 10px;
     }
 
     table, th, td {
