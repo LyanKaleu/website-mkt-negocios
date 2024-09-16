@@ -60,6 +60,22 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="input-box">
+                    <div class="box-itens">
+                        <span class="material-symbols-outlined">book</span>
+                        <label class="subtitle" for="categoria">Curso</label>
+                    </div>
+                    <div class="column">
+                        <div class="select-box">
+                            <select name="curso" id="curso" class="select" required>
+                                <option value="" hidden>Selecione o curso</option>
+                                <option value="marketing">Marketing & Vendas</option>
+                                <option value="negocios">Negócios & Empreendedorismo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
         
                 <div class="btns">
                     <button class="submitBTN" type="submit">Enviar</button>
@@ -156,7 +172,7 @@
             }, 5000);
         }
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw9_50AxGJAn_n0V_P5wQQ-VKBRmYe-WOKIHIqHeW1OftT1CR-vFcBeio-NDMGSLjwagw/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwgrkoME4-nY929GodZc5M4mNLKtbCPTTadTvGwXhIIqJ7ducuSM6N5WpP-KI4PUoSn-g/exec';
         const form = document.forms['submit-to-google-sheet']; // formulario no index
 
         form.addEventListener('submit', e =>
