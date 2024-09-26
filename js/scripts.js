@@ -102,26 +102,32 @@ function openTab(evt, tabName) {
 
 function atualizarValoresIngressos() {
     const dataAtual = new Date();
+    dataAtual.setHours(0, 0, 0, 0);
     
-    const lote1Fim = new Date('2024-09-30');
-    const lote2Inicio = new Date('2024-10-01');
-    const lote2Fim = new Date('2024-10-15');
-    const lote3Inicio = new Date('2024-10-16');
+    const lote1Fim = new Date('2024-10-06');
+    lote1Fim.setHours(23, 59, 59, 999);
+
+    const lote2Inicio = new Date('2024-10-07');
+    lote2Inicio.setHours(0, 0, 0, 0);
+
+    const lote2Fim = new Date('2024-10-25');
+    lote2Fim.setHours(23, 59, 59, 999);
+
     
     const estudanteBox = document.querySelector('.card.studant p');
     const demaisBox = document.querySelector('.card.entire p');
 
     
     if (dataAtual <= lote1Fim) {
-        estudanteBox.textContent = 'R$ 200,00';
-        demaisBox.textContent = 'R$ 350,00';
+        estudanteBox.textContent = 'R$ 100,00';
+        demaisBox.textContent = 'R$ 150,00';
     } else if (dataAtual >= lote2Inicio && dataAtual <= lote2Fim) {
-        estudanteBox.textContent = 'R$ 250,00';
-        demaisBox.textContent = 'R$ 400,00';
-    } else if (dataAtual >= lote3Inicio) {
-        estudanteBox.textContent = 'R$ 300,00';
-        demaisBox.textContent = 'R$ 450,00';
-    }
+        estudanteBox.textContent = 'R$ 130,00';
+        demaisBox.textContent = 'R$ 180,00';
+    } else {
+        estudanteBox.textContent = 'Inscrições Encerradas'
+        demaisBox.textContent = 'Inscrições Encerradas'
+    } 
 };
 
 function countdown () {

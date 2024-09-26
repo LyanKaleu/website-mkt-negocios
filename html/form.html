@@ -135,22 +135,25 @@
                     const categoria = document.getElementById('categoria').value;
                     let url = '';
                     const hoje = new Date();
+                    hoje.setHours(0, 0, 0, 0);
+
+                    const lote1Fim = new Date('2024-10-06');
+                    lote1Fim.setHours(23, 59, 59, 999);
+
+                    const lote2Fim = new Date('2024-10-25');
+                    lote2Fim.setHours(23, 59, 59, 999);
 
                     if (categoria === 'estudante') {
-                        if (hoje <= new Date('2024-09-30')) {
+                        if (hoje <= lote1Fim) {
                             url = 'https://mpago.la/1tTbVUK'; // 1 lote estudante
-                        } else if (hoje <= new Date('2024-10-01')) {
+                        } else if (hoje <= lote2Fim) {
                             url = 'https://mpago.la/2NdG5FZ'; // 2 lote estudante
-                        } else {
-                            url = 'https://mpago.la/1zVpyNh'; // 3 lote estudante
                         }
                     } else {
-                        if (hoje <= new Date('2024-09-30')) {
+                        if (hoje <= lote1Fim) {
                             url = 'https://mpago.la/1nHLrTG'; // 1 lote demais
-                        } else if (hoje <= new Date('2024-10-01')) {
+                        } else if (hoje <= lote2Fim) {
                             url = 'https://mpago.la/2piU3iR'; // 2 lote demais
-                        } else {
-                            url = 'https://mpago.la/2Fae7YX'; // 3 lote demais
                         }
                     }
 
